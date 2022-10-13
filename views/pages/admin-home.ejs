@@ -1,0 +1,35 @@
+<h1 class="text-center mt-3">Welcome to Home Page</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end m-5">
+    <a href="/admin/add-user" class="btn btn-success btn-md active" role="button" aria-pressed="true">Add User</a>
+    </div>
+    
+<div class="m-5">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<user.length; i++) {%>
+          <tr>
+            <td><%= user[i].userFname %></td>
+            <td><%= user[i].userLname %></td>
+            <td><%= user[i].userEmail %></td>
+            <td><a href="/admin/update-user?id=<%= user[i]._id %>" class="btn btn-warning">Update</a></td>
+            <td><a href="/admin/delete?id=<%= user[i]._id %>" class="btn btn-danger">Delete</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+</div>
+
+
+<div class=" text-center col-6 mx-auto">
+<a href="/admin/logout" class="btn btn-primary btn-lg active mt-5" role="button" aria-pressed="true">Logout</a>
+</div>
+
+ 
